@@ -4,16 +4,4 @@ updates:
     directory: "/"
     schedule:
       interval: "daily"
-    groups:
-      all-dependencies:
-        patterns:
-          - "*"
-    commit-message:
-      prefix: "deps"
-      include: "scope"
-    open-pull-requests-limit: 10
-    rebase-strategy: "auto"
-    labels:
-      - "dependencies"
-    allow:
-      - dependency-type: "all"
+    auto-merge: true
