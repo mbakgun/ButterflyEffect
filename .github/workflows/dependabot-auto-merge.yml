@@ -3,7 +3,7 @@ name: Auto Merge Pull Requests
 on:
   pull_request:
     branches:
-      - main
+      - master
 
 permissions:
   contents: write
