@@ -24,7 +24,7 @@ jobs:
           java-version: '11'
 
       - name: Build Web Application
-        run: ./gradlew :composeApp:wasmBrowserDevelopmentExecutableDistribution
+        run: ./gradlew :composeApp:wasmJsBrowserDevelopmentExecutableDistribution
 
       - name: Build Desktop Application
         run: ./gradlew :composeApp:packageDistributionForCurrentOS
