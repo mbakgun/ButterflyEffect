@@ -1,4 +1,4 @@
-name: Auto Merge Pull Requests
+name: Auto Merge Pull Requests Checks
 on:
   pull_request:
     branches:
@@ -14,7 +14,24 @@ jobs:
       contents: write
       pull-requests: write
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: 17
+          distribution: 'adopt'
+          cache: 'gradle'
+
+      - name: Build Web Application
+        run: ./gradlew :composeApp:wasmJsBrowserDevelopmentExecutableDistribution
+
+      - name: Build Desktop Application
+        run: ./gradlew :composeApp:packageDistributionForCurrentOS
+
       - name: Automatically Merge Dependabot PRs
+        if: success()
         uses: pascalgn/automerge-action@v0.15.6
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
