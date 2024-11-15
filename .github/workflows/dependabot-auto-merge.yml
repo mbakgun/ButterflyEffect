@@ -1,4 +1,4 @@
-name: Auto Merge Pull Requests
+name: Auto Merge Pull Requests Checks
 on:
   pull_request:
     branches:
@@ -24,10 +24,10 @@ jobs:
           java-version: '11'
 
       - name: Build Web Application
-        run: ./gradlew :composeApp:wasmJsBrowserDevelopmentRun
+        run: ./gradlew :composeApp:wasmBrowserDevelopmentExecutableDistribution
 
       - name: Build Desktop Application
-        run: ./gradlew :composeApp:run
+        run: ./gradlew :composeApp:packageDistributionForCurrentOS
 
       - name: Automatically Merge Dependabot PRs
         if: success()
