@@ -50,6 +50,7 @@ This game project is built using Kotlin Multiplatform, targeting both Web and De
 Experience the game in your browser by visiting the demo [here](https://mbakgun.github.io/ButterflyEffect).
 
 ⭐️ A great article to read: [The Butterfly Effect](https://thedecisionlab.com/reference-guide/economics/the-butterfly-effect)
+
 <img src="assets/butter.avif" alt="https://thedecisionlab.com/reference-guide/economics/the-butterfly-effect" width="720" title="A great article to read"/>
 
 ## Conclusion
