@@ -1,0 +1,30 @@
+name: Deploy to GitHub Pages
+
+on:
+  pull_request:
+    types: [closed]
+    branches: [master]
+
+jobs:
+  build-and-deploy:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up JDK
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+
+      - name: Build
+        run: ./gradlew :composeApp:wasmJsBrowserProductionWebpack
+
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages
+          folder: composeApp/build/dist/wasmJs/productionExecutable
+          clean: true
