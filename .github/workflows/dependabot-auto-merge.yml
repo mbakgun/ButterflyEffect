@@ -28,6 +28,7 @@ jobs:
         run: ./gradlew :composeApp:packageDistributionForCurrentOS
 
       - name: Automatically Merge Dependabot PRs
+        if: success()
         uses: pascalgn/automerge-action@v0.15.6
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
