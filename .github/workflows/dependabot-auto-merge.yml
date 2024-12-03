@@ -21,6 +21,9 @@ jobs:
           distribution: 'adopt'
           cache: 'gradle'
 
+      - name: Update Yarn Lock
+        run: ./gradlew kotlinUpgradeYarnLock
+
       - name: Build Web Application
         run: ./gradlew :composeApp:wasmJsBrowserDevelopmentExecutableDistribution
 
