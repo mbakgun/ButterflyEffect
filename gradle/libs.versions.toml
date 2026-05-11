@@ -2,7 +2,7 @@
 androidx-lifecycle = "2.9.4"
 compose-multiplatform = "1.7.3"
 kotlin = "2.1.21"
-kotlinx-coroutines = "1.10.2"
+kotlinx-coroutines = "1.11.0"
 
 [libraries]
 androidx-lifecycle-viewmodel = { group = "org.jetbrains.androidx.lifecycle", name = "lifecycle-viewmodel", version.ref = "androidx-lifecycle" }
